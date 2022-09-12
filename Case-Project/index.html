@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cart-to-Home</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 id="brand"><a href="index.html"><img src="img/logo.png" alt="logo" class="logo"/></a></h1>
+        <ul>
+          <li><a href="index.html" class="highlighted">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="food.html">Food</a></li>
+          <li><a href="checkout.html"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512"><path class="cart-img" d="M7.8 33.1C3.5 35.3 0 41.2 0 46c0 5 3.5 10.7 8 13 3.7 1.9 5.8 2 44.9 2H94l.5 2.2C95.8 68.5 148 304 148 304.5c0 .2-1.9 1.4-4.2 2.6-2.4 1.2-6.8 4.7-9.8 7.8-13.4 13.8-16.5 32.8-8.2 50.5 5.8 12.4 18.3 22 32.1 24.6 3 .5 11.7 1 19.5 1.1 10.9.1 13.1.3 9.7 1-22.7 4.4-39.1 27.8-35.3 50.5 4.1 24.5 27 41.5 50.8 37.6 19.6-3.2 34.4-18 37.6-37.6 3.8-22.7-12.6-46.1-35.3-50.5-2.6-.5 37.3-.9 96.6-.9s99.2.4 96.6.9c-22.7 4.4-39.1 27.8-35.3 50.5 3.2 19.6 18 34.4 37.6 37.6 23.8 3.9 46.7-13.1 50.8-37.6 3.8-22.7-12.6-46.1-35.3-50.5-3.4-.7-1.1-.9 9.9-1 12.2-.1 14.9-.4 18.2-2.1 4.5-2.3 8-8 8-13s-3.5-10.7-8-13c-3.9-2-5.6-2-142.5-2s-138.6 0-142.5-2c-4.5-2.3-8-8-8-13 0-4.5 3.5-10.7 7.3-12.7 3-1.7 11.7-1.8 143.4-2.3 139.6-.5 140.2-.5 142.9-2.6 1.5-1.1 3.6-3.1 4.6-4.5 2-2.6 62.8-214.2 62.8-218.4 0-4.5-3.7-10.3-8-12.5-3.9-2-5.5-2-188.3-2H131.3l-5.4-24.7c-3.9-17.9-6.1-25.7-7.9-28.4-4.4-6.9-4.1-6.9-58.3-6.9-46 .1-48.4.2-51.9 2.1z"/></svg></a><div id="item-number"></div></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="top-photo">
+      <section id="welcome-section">
+        <h1>Welcome to Cart-to-Home!</h1>
+        <h3>Where you can buy groceries online and have them shipped to your home!</h3>
+        <button id="learn-more-button" onclick="window.location.href='about.html';">About Cart-to-Home</button>
+      </section>
+      </div>
+      <section class="container" id="home-cards">
+        <div class="row">
+          <h2>The best online grocery service you can find</h2>
+          <div class="card">
+            <h3>Order groceries from the comfort of your home</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure explicabo sunt veniam necessitatibus praesentium magni voluptates.</p>
+            <img src="img/ordering.jpg" alt="Ordering">
+          </div>
+          <div class="card">
+            <h3>Your order is prepared by your local store</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure explicabo sunt veniam necessitatibus praesentium magni voluptates.</p>
+            <img src="img/preparing.jpg" alt="Preparing">
+          </div>
+          <div class="card">
+            <h3>Groceries are delivered to your door</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure explicabo sunt veniam necessitatibus praesentium magni voluptates.</p>
+            <img src="img/delivery.jpg" alt="Delivery">
+          </div>
+        </div>
+      </section>
+      <form id="newsletter-form">
+        <h3>Sign up to our newsletter to recieve special offers!</h3>
+        <p id="error"></p>
+        <label for="firstName">First name:</label><br>
+        <input type="text" id="firstName" name="firstName" placeholder="John" class="input-form"><br>
+        <label for="lastName">Last name:</label><br>
+        <input type="text" id="lastName" name="lastName" placeholder="Doe" class="input-form"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" placeholder="example@gmail.com" class="input-form"><br>
+        <label for="offers" id="label-offers">How often would you like to recieve special <br><span>offers from us?</span></label><br>
+        <select name="offers" id="offers">
+          <option label="Select an option" value=""></option>
+          <option label="Three times a week" value="Three times a week">Three times a week</option>
+          <option label="Once a week" value="Once a week">Once a week</option>
+          <option label="Once a month" value="Once a month">Once a month</option>
+          <option value="Never">Never</option>
+        </select><br>
+        <label for="yes" id="terms-label"> I agree to Cart-to-Home's terms of <div id="service">service:</div></label><br>
+        <div class="center">
+          <input type="radio" id="yes" name="terms-of-service" value="Yes">
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="terms-of-service" value="No">
+          <label for="no">No</label>
+        </div>
+        <button type="submit" id="submit-btn">Submit</button>
+      </form>
+      <section id="security">
+        <h2>Cart-to-Home cares about web security</h2>
+        <h4><a href="web-security.html" target="_blank">Learn More Here</a></h4>
+      </section>
+    </main>
+    <footer>
+      <small>&copy; Copyright Michael Soucek 2022</small>
+    </footer>
+    <script src="script.js"></script>
+    <script src="modernizr.custom.05819.js"></script>
+  </body>
+</html>

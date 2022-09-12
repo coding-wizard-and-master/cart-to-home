@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cart-to-Home</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 id="brand"><a href="index.html"><img src="img/logo.png" alt="logo" class="logo"/></a></h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="food.html" 
+          class="highlighted">Food</a></li>
+          <li><a href="checkout.html"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512"><path class="cart-img" d="M7.8 33.1C3.5 35.3 0 41.2 0 46c0 5 3.5 10.7 8 13 3.7 1.9 5.8 2 44.9 2H94l.5 2.2C95.8 68.5 148 304 148 304.5c0 .2-1.9 1.4-4.2 2.6-2.4 1.2-6.8 4.7-9.8 7.8-13.4 13.8-16.5 32.8-8.2 50.5 5.8 12.4 18.3 22 32.1 24.6 3 .5 11.7 1 19.5 1.1 10.9.1 13.1.3 9.7 1-22.7 4.4-39.1 27.8-35.3 50.5 4.1 24.5 27 41.5 50.8 37.6 19.6-3.2 34.4-18 37.6-37.6 3.8-22.7-12.6-46.1-35.3-50.5-2.6-.5 37.3-.9 96.6-.9s99.2.4 96.6.9c-22.7 4.4-39.1 27.8-35.3 50.5 3.2 19.6 18 34.4 37.6 37.6 23.8 3.9 46.7-13.1 50.8-37.6 3.8-22.7-12.6-46.1-35.3-50.5-3.4-.7-1.1-.9 9.9-1 12.2-.1 14.9-.4 18.2-2.1 4.5-2.3 8-8 8-13s-3.5-10.7-8-13c-3.9-2-5.6-2-142.5-2s-138.6 0-142.5-2c-4.5-2.3-8-8-8-13 0-4.5 3.5-10.7 7.3-12.7 3-1.7 11.7-1.8 143.4-2.3 139.6-.5 140.2-.5 142.9-2.6 1.5-1.1 3.6-3.1 4.6-4.5 2-2.6 62.8-214.2 62.8-218.4 0-4.5-3.7-10.3-8-12.5-3.9-2-5.5-2-188.3-2H131.3l-5.4-24.7c-3.9-17.9-6.1-25.7-7.9-28.4-4.4-6.9-4.1-6.9-58.3-6.9-46 .1-48.4.2-51.9 2.1z"/></svg></a><div id="item-number"></div></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="row-items">
+        <h1>Popular Items</h1>
+        <section class="item" id="banana">
+          <img src="img/banana.png" alt="Banana" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 0 to indicate which button was clicked.  -->
+          <button id="btn-0" type="button" class="add-item-button" onclick="addItem(0)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-0">
+            <!-- When the negative button is clicked the subItem() function is called and 0 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(0)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 0 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-0" class="input-num" type="text" name="num-input" onkeydown="updateValue(0)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(0)">+</button>
+          </div>
+          <h3 id="banana-price">$0.58</h3>
+          <h4>Banana</h4>
+        </section>
+        <section class="item" id="pizza">
+          <img src="img/pizza.png" alt="Pizza" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 1 to indicate which button was clicked.  -->
+          <button id="btn-1" type="button" class="add-item-button" onclick="addItem(1)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-1">
+            <!-- When the negative button is clicked the subItem() function is called and 1 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(1)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 1 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-1" class="input-num" type="text" name="num-input" onkeydown="updateValue(1)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(1)">+</button>
+          </div>
+          <h3 id="pizza-price">$4.99</h3>
+          <h4>Margarita Pizza</h4>
+        </section>
+        <section class="item" id="carrots">
+          <img src="img/carrots.png" alt="Organic Carrots" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 2 to indicate which button was clicked.  -->
+          <button id="btn-2" type="button" class="add-item-button" onclick="addItem(2)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-2">
+            <!-- When the negative button is clicked the subItem() function is called and 2 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(2)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 2 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-2" class="input-num" type="text" name="num-input" onkeydown="updateValue(2)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(2)">+</button>
+          </div>
+          <h3 id="carrots-price">$1.49</h3>
+          <h4>Organic Carrots</h4>
+        </section>
+        <section class="item" id="strawberries">
+          <img src="img/strawberries.png" alt="Strawberries" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 3 to indicate which button was clicked.  -->
+          <button id="btn-3" type="button" class="add-item-button" onclick="addItem(3)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-3">
+            <!-- When the negative button is clicked the subItem() function is called and 3 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(3)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 3 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-3" class="input-num" type="text" name="num-input" onkeydown="updateValue(3)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(3)">+</button>
+          </div>
+          <h3 id="strawberries-price">$3.99</h3>
+          <h4>Strawberries</h4>
+        </section>
+        <section class="item" id="eggs">
+          <img src="img/eggs.png" alt="Eggs" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 4 to indicate which button was clicked.  -->
+          <button id="btn-4" type="button" class="add-item-button" onclick="addItem(4)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-4">
+            <!-- When the negative button is clicked the subItem() function is called and 4 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(4)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 4 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-4" class="input-num" type="text" name="num-input" onkeydown="updateValue(4)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(4)">+</button>
+          </div>
+          <h3 id="eggs-price">$1.24</h3>
+          <h4>Carton of Eggs</h4>
+        </section>
+        <section class="item" id="apple">
+          <img src="img/apple.png" alt="Apple" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 5 to indicate which button was clicked.  -->
+          <button id="btn-5" class="add-item-button" onclick="addItem(5)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-5">
+            <!-- When the negative button is clicked the subItem() function is called and 5 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(5)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 5 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-5" class="input-num" type="text" name="num-input" onkeydown="updateValue(5)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(5)">+</button>
+          </div>
+          <h3 id="apple-price">$0.99</h3>
+          <h4>Apple</h4>
+        </section>
+      </section>
+      <section class="row-items">
+        <h1>Household Necessities</h1>
+        <section class="item" id="toilet-paper">
+          <img src="img/toilet-paper.png" alt="toilet-paper" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 6 to indicate which button was clicked.  -->
+          <button id="btn-6" class="add-item-button" onclick="addItem(6)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-6">
+            <!-- When the negative button is clicked the subItem() function is called and 6 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(6)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-6" class="input-num" type="text" name="num-input" onkeydown="updateValue(6)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(6)">+</button>
+          </div>
+          <h3>$0.99</h3>
+          <h4>Toilet Paper</h4>
+        </section>
+        <section class="item" id="toothbrush">
+          <img src="img/toothbrush.png" alt="toothbrush" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 7 to indicate which button was clicked.  -->
+          <button id="btn-7" class="add-item-button" onclick="addItem(7)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-7">
+            <!-- When the negative button is clicked the subItem() function is called and 7 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(7)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-7" class="input-num" type="text" name="num-input" onkeydown="updateValue(7)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(7)">+</button>
+          </div>
+          <h3>$2.99</h3>
+          <h4>Toothbrush</h4>
+        </section>
+        <section class="item" id="tooth-paste">
+          <img src="img/toothpaste.png" alt="tooth paste" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 8 to indicate which button was clicked.  -->
+          <button id="btn-8" class="add-item-button" onclick="addItem(8)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-8">
+            <!-- When the negative button is clicked the subItem() function is called and 8 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(8)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-8" class="input-num" type="text" name="num-input" onkeydown="updateValue(8)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(8)">+</button>
+          </div>
+          <h3>$1.67</h3>
+          <h4>Tooth Paste</h4>
+        </section>
+        <section class="item" id="tissues">
+          <img src="img/tissues.png" alt="tissues" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 9 to indicate which button was clicked.  -->
+          <button id="btn-9" class="add-item-button" onclick="addItem(9)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-9">
+            <!-- When the negative button is clicked the subItem() function is called and 8 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(9)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-9" class="input-num" type="text" name="num-input" onkeydown="updateValue(9)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(9)">+</button>
+          </div>
+          <h3>$1.99</h3>
+          <h4>Tissues</h4>
+        </section>
+        <section class="item" id="Soap">
+          <img src="img/soap.png" alt="Soap" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 10 to indicate which button was clicked.  -->
+          <button id="btn-10" class="add-item-button" onclick="addItem(10)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-10">
+            <!-- When the negative button is clicked the subItem() function is called and 10 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(10)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-10" class="input-num" type="text" name="num-input" onkeydown="updateValue(10)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(10)">+</button>
+          </div>
+          <h3>$2.49</h3>
+          <h4>Soap</h4>
+        </section>
+        <section class="item" id="Small-Broom">
+          <img src="img/small-broom.png" alt="Small Broom" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 11 to indicate which button was clicked.  -->
+          <button id="btn-11" class="add-item-button" onclick="addItem(11)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-11">
+            <!-- When the negative button is clicked the subItem() function is called and 11 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(11)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-11" class="input-num" type="text" name="num-input" onkeydown="updateValue(11)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(11)">+</button>
+          </div>
+          <h3>$8.99</h3>
+          <h4>Small Broom</h4>
+        </section>
+      </section>
+      <section class="row-items">
+        <h1>Top Picks</h1>
+        <section class="item" id="tooth-paste">
+          <img src="img/lettuce.png" alt="lettuce" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 12 to indicate which button was clicked.  -->
+          <button id="btn-12" class="add-item-button" onclick="addItem(12)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-12">
+            <!-- When the negative button is clicked the subItem() function is called and 12 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(12)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-12" class="input-num" type="text" name="num-input" onkeydown="updateValue(12)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(12)">+</button>
+          </div>
+          <h3>$1.29</h3>
+          <h4>Lettuce</h4>
+        </section>
+        <section class="item" id="potatoes">
+          <img src="img/potatoes.png" alt="potatoes" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 13 to indicate which button was clicked.  -->
+          <button id="btn-13" class="add-item-button" onclick="addItem(13)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-13">
+            <!-- When the negative button is clicked the subItem() function is called and 13 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(13)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-13" class="input-num" type="text" name="num-input" onkeydown="updateValue(13)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(13)">+</button>
+          </div>
+          <h3>$3.99</h3>
+          <h4>Potatoes</h4>
+        </section>
+        <section class="item" id="açai-bowl">
+          <img src="img/açai.png" alt="Açai Bowl" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 14 to indicate which button was clicked.  -->
+          <button id="btn-14" class="add-item-button" onclick="addItem(14)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-14">
+            <!-- When the negative button is clicked the subItem() function is called and 14 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(14)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-14" class="input-num" type="text" name="num-input" onkeydown="updateValue(14)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(14)">+</button>
+          </div>
+          <h3>$4.59</h3>
+          <h4>Açai Bowl</h4>
+        </section>
+        <section class="item" id="Oatmeal">
+          <img src="img/oatmeal.png" alt="Oatmeal" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 15 to indicate which button was clicked.  -->
+          <button id="btn-15" class="add-item-button" onclick="addItem(15)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-15">
+            <!-- When the negative button is clicked the subItem() function is called and 15 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(15)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-15" class="input-num" type="text" name="num-input" onkeydown="updateValue(15)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(15)">+</button>
+          </div>
+          <h3>$2.99</h3>
+          <h4>Oatmeal</h4>
+        </section>
+        <section class="item" id="chicken-nuggets">
+          <img src="img/nuggets.png" alt="chicken nuggets" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 16 to indicate which button was clicked.  -->
+          <button id="btn-16" class="add-item-button" onclick="addItem(16)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-16">
+            <!-- When the negative button is clicked the subItem() function is called and 16 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(16)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-16" class="input-num" type="text" name="num-input" onkeydown="updateValue(16)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(16)">+</button>
+          </div>
+          <h3>$6.49</h3>
+          <h4>Chicken Nuggets</h4>
+        </section>
+        <section class="item" id="blueberries">
+          <img src="img/blueberries.png" alt="blueberries" />
+          <!-- Once the button is clicked it calls the AddItem() function and passes in an argument of 17 to indicate which button was clicked.  -->
+          <button id="btn-17" class="add-item-button" onclick="addItem(17)">Add</button>
+          <!-- Add and subtract button and input that appears after adding an item -->
+          <div class="add-subtract-item" id="add-subtract-item-17">
+            <!-- When the negative button is clicked the subItem() function is called and 17 is passed in to the function to indicate which button was clicked. -->
+            <button class="subtract-btn" onclick="subItem(17)">-</button>
+            <!-- The onkeydown function is used so that when a key is pressed it will call that function if the input has been clicked. However in the functon it only executes fully if the enter key was pressed. 6 is passed into the funtion as well to indicate which input has been selected.  -->
+            <input id="input-num-17" class="input-num" type="text" name="num-input" onkeydown="updateValue(17)" />
+            <!-- Just like the orginaly add button that is displayed at first this button essentially does the same exact thing. -->
+            <button class="add-btn" onclick="addItem(17)">+</button>
+          </div>
+          <h3>$1.99</h3>
+          <h4>Blueberries</h4>
+        </section>
+      </section>
+      
+      <!-- <section class="row-items">
+        <h1>Beverages</h1>
+      </section> -->
+    </main>
+    <footer>
+      <small>&copy; Copyright Michael Soucek 2022</small>
+    </footer>
+    <script src="script.js"></script>
+    <script src="modernizr.custom.05819.js"></script>
+  </body>
+</html>
